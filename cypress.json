@@ -1,0 +1,17 @@
+{
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 30000,
+  "reporter": "mochawesome",
+  "testFiles": "**/*.feature",
+  "env": {
+    "url": "https://rahulshettyacademy.com" 
+  },
+  
+  "retries": {
+
+  "runMode": 1
+
+  },
+  
+  "projectId": "rbegc3"
+}

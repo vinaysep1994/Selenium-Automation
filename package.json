@@ -1,0 +1,18 @@
+{
+  "name": "crm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chormeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key c3cd8130-a6dc-45eb-8c4a-a7b01bc9c93d --reporter mochawesome",
+    "CrmTest": "npm run test -- --spec \"cypress/integration/examples/GreenKart/*\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^8.3.0"
+  }
+}

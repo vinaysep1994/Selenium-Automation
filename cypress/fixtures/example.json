@@ -1,0 +1,9 @@
+{
+  "adminuserid": "mis@blackboardindia.com",
+  "adminpassword": "DES@123",
+  "counsellorid":"vinay@edutra.io",
+  "counsellorpassword":"passwords",
+  "fullname":"Testkumar",
+  "email":"testkuamr@gmail.com",
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}
