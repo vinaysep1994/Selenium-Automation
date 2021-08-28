@@ -3,7 +3,6 @@ import UserLogin from '../support/ModuleObject/UserLogin'
 import DashBoard from '../support/ModuleObject/DashBoard'
 import Lead from '../support/ModuleObject/Lead'
 
-
 describe('CRM Automation', function() 
 {
     before(function() {
@@ -16,12 +15,11 @@ const  login = new UserLogin()
 const  dashboard = new DashBoard()
 const lead = new Lead()
 
-
 it('My FirstTest case',function() {
 cy.visit("https://uat.crm2.edutra.io/login")
 
-login.getUserID().type(this.data.counsellorid)
-login.getPassword().type(this.data.counsellorpassword)
+login.getUserID().type(this.data.teamleadid)
+login.getPassword().type(this.data.teamleadpass)
 login.getSignin().click()
 dashboard.getManubar().click({force: true})
 lead.getAllLead().click({force: true})
@@ -31,7 +29,7 @@ lead.getEmail().type(this.data.email)
 lead.getMobileNumber().type(this.data.mobilenumber)
 lead.getRemark().type(this.data.remark)
 lead.getUniversity().select(this.data.university)
-lead.getCounsellor().select(this.data.counsellor)
+lead.getCounsellor().select(this.data.teamlead)
 lead.getSource().select(this.data.source)
 lead.getSubsource().select(this.data.subsource)
 lead.getStage().select(this.data.stage)
@@ -42,7 +40,6 @@ lead.getSpecialization().select(this.data.specialization)
 lead.getState().select(this.data.state)
 lead.getCity().select(this.data.city)
 lead.getAdd().click({force: true})
-
 
 
 })
