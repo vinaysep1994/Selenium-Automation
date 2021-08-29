@@ -19,7 +19,7 @@ it('My FirstTest case',function() {
 cy.visit("https://uat.crm2.edutra.io/login")
 
 {
-login.getUserID().type(this.data.counsellorid)
+login.getUserID().type(this.data.adminuserid)
 login.getPassword().type(this.data.adminpassword)
 login.getSignin().click()
 dashboard.getManubar().click({force: true})
