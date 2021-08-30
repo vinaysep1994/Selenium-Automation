@@ -41,7 +41,5 @@ lead.getState().select(this.data.state)
 lead.getCity().select(this.data.city)
 lead.getAdd().click({force: true})
 
-
 })
-
 })
