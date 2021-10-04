@@ -1,10 +1,13 @@
 class DashBoard
 
 {
-    getManubar()
+    getAllLead()
     {
-        return cy.get('header div .gap-5 > button > .w-5')
+      return cy.get('#leads')
     }
-
+    getClickUser()
+    {
+        return cy.get(':nth-child(5) > :nth-child(3) > a')
+    }
 }
 export default DashBoard; 

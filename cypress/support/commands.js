@@ -10,7 +10,23 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+// Cypress.Commands.add('login', (email, password) => { ... }) 
+
+Cypress.Commands.add('AdminLogin',(email, password) => {
+
+    cy.visit('https://staging.crm2.edutra.io/')
+    cy.get('#email').type('support@distanceeducationschool.com')
+    cy.get('#password').type('DES@123')
+    cy.get('.pt-8 > .justify-center').click()
+  })
+
+  Cypress.Commands.add('AMLogin', (email, password) => {
+
+    cy.visit('https://staging.crm2.edutra.io/')
+    cy.get('#email').type('akashdutta@blackboardindia.com')
+    cy.get('#password').type('BSEE1179@123')
+    cy.get('.pt-8 > .justify-center').click()
+  })
 //
 //
 // -- This is a child command --

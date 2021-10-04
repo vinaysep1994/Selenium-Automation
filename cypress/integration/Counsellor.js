@@ -1,50 +1,46 @@
-/// <reference types="Cypress" />
-import UserLogin from '../support/ModuleObject/UserLogin'
-import DashBoard from '../support/ModuleObject/DashBoard'
-import Lead from '../support/ModuleObject/Lead'
-
-
-describe('CRM Automation', function() 
-{
-    before(function() {
-        cy.fixture('example').then(function(data)
-        {
-this.data=data
-        })
+/*
+    settings.getClickSource().click()
+    settings.getSourceName().type(this.data.sourcenames)
+    settings.getAddSource().click()
+    settings.getSourceAssertion().then(function(element)
+    {
+    const Source =element.text()
+    expect(Source.includes('Source/Sub-Source added successfully!')).to.be.true
+    cy.log('Source/Sub-Source added successfully!')
     })
-const  login = new UserLogin()
-const  dashboard = new DashBoard()
-const lead = new Lead()
-
-
-it('My FirstTest case',function() {
-cy.visit("https://uat.crm2.edutra.io/login")
-
-login.getUserID().type(this.data.counsellorid)
-login.getPassword().type(this.data.counsellorpassword)
-login.getSignin().click()
-dashboard.getManubar().click({force: true})
-lead.getAllLead().click({force: true})
-lead.getAddLead().click({force: true})
-lead.getFullName().type(this.data.fullname)
-lead.getEmail().type(this.data.email)
-lead.getMobileNumber().type(this.data.mobilenumber)
-lead.getRemark().type(this.data.remark)
-lead.getUniversity().select(this.data.university)
-lead.getCounsellor().select(this.data.counsellor)
-lead.getSource().select(this.data.source)
-lead.getSubsource().select(this.data.subsource)
-lead.getStage().select(this.data.stage)
-lead.getReason().select(this.data.reason)
-lead.getSubreason().select(this.data.subreason)
-lead.getCourse().select(this.data.courses)
-lead.getSpecialization().select(this.data.specialization)
-lead.getState().select(this.data.state)
-lead.getCity().select(this.data.city)
-lead.getAdd().click({force: true})
-
-
-
+    } 
+    else
+    {  
+    settings.getClickSource().click()
+    settings.getSourceName().type(this.data.sourcenames)
+    settings.getAddSource().click()
+    settings.getSourceAssertion().then(function(element)
+    {
+    const Source =element.text()
+    expect(Source.includes('Source/Sub-Source added successfully!')).to.be.true
+    })
+    
+    }
 })
 
-})
+//Next test case
+settings.getsourcelist().then((Source) => {
+
+    if (Source.text().includes('Test source')) {
+    settings.getSourceEdit().click()
+    settings.getEditsourceName().type(this.data.sourcenames)
+    settings.getAddSource().click()
+    cy.log('Source/Sub-Source Edit successfully!')
+    }
+    })
+
+
+
+//source Delete
+settings.getsourcelist().then((Source) => {
+
+    if (Source.text().includes('Test source')) {
+    settings.getSourcedelete().click()
+    cy.log('Source/Sub-Source deleted successfully!')
+    }
+*/

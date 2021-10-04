@@ -1,47 +1,92 @@
 /// <reference types="Cypress" />
-import UserLogin from '../support/ModuleObject/UserLogin'
+import Login from '../support/ModuleObject/Login'
 import DashBoard from '../support/ModuleObject/DashBoard'
 import Lead from '../support/ModuleObject/Lead'
+import Settings from '../support/ModuleObject/Settings'
 
-describe('CRM Automation', function() 
+describe('Settings', function()
 {
-    before(function() {
-        cy.fixture('example').then(function(data)
-        {
-this.data=data
-        })
+const settings = new Settings()
+ 
+it('settings',function() {
+
+cy.AdminLogin()
+settings.getSetting().click()
+//Stage Edit
+
+function SubSourceAdd(){
+    settings.getClickSubsource().click()
+    settings.getSubsourceName().type('test sub source')
+    settings.getSelectSources().select('Test source')
+    settings.getAddSubsource().click()
+}
+settings.getTableList().then((Source) => {
+    if (Source.text().includes('test sub source')) 
+    { 
+        SubSourceAdd()
+        settings.getSourceAssertion().then(function(element){
+        const Source =element.text()
+        expect(Source.includes('Source/Sub-Source already exists!')).to.be.true
+        cy.log('Source/Sub-Source already exists!')
+        })  
+    } else{
+        SubSourceAdd()
+        settings.getSourceAssertion().then(function(element){
+            const Source =element.text()
+            expect(Source.includes('Source/Sub-Source added successfully!')).to.be.true
+            cy.log('Source/Sub-Source added successfully!')
+            })
+         //already exist
+        SubSourceAdd()
+        settings.getSourceAssertion().then(function(element)
+            {
+            const Source =element.text()
+            expect(Source.includes('Source/Sub-Source already exists!')).to.be.true
+            cy.log('Source/Sub-Source already exists!')
+            })
+    }    
     })
-const  login = new UserLogin()
-const  dashboard = new DashBoard()
-const lead = new Lead()
-
-it('My FirstTest case',function() {
-cy.visit("https://uat.crm2.edutra.io/login")
-
-login.getUserID().type(this.data.assistantmanagerid)
-login.getPassword().type(this.data.assistantmanagerpass)
-login.getSignin().click()
-dashboard.getManubar().click({force: true})
-lead.getAllLead().click({force: true})
-lead.getAddLead().click({force: true})
-lead.getFullName().type(this.data.fullname)
-lead.getEmail().type(this.data.email)
-lead.getMobileNumber().type(this.data.mobilenumber)
-lead.getRemark().type(this.data.remark)
-lead.getUniversity().select(this.data.university)
-lead.getCounsellor().select(this.data.assistantmanager)
-lead.getSource().select(this.data.source)
-lead.getSubsource().select(this.data.subsource)
-lead.getStage().select(this.data.stage)
-lead.getReason().select(this.data.reason)
-lead.getSubreason().select(this.data.subreason)
-lead.getCourse().select(this.data.courses)
-lead.getSpecialization().select(this.data.specialization)
-lead.getState().select(this.data.state)
-lead.getCity().select(this.data.city)
-lead.getAdd().click({force: true})
-
-
+    
+//Sub source Delete
+settings.getTableList().then((Source) => {
+    if (Source.text().includes('test sub source'))
+    {
+    settings.getsubSourcedelete().click()
+    cy.log('Source/Sub-Source deleted successfully!')
+    }
 })
 
+//Add sub source
+SubSourceAdd()
+settings.getSourceAssertion().then(function(element){
+    const Source =element.text()
+    expect(Source.includes('Source/Sub-Source added successfully!')).to.be.true
+    cy.log('Source/Sub-Source added successfully!')
 })
+/*
+//stage  Edit
+settings.getClickStages().click({force: true})
+
+settings.getTableList().then((Stage) => {
+    if (Stage.text().includes('Test Stage')) 
+    { 
+        settings.getEditStage1().click()
+        settings.getStagesEditName().clear().type('Test')
+        settings.getAdd().click()
+        cy.log('Stage edit successfully "Test"')
+    }else{
+        settings.getEditStage2().click()
+        settings.getStagesEditName().clear().type('Test Stage')
+        settings.getAdd().click()
+        cy.log('Stage edit successfully "Test Stage"')
+    }
+})
+
+*/
+})
+})
+
+    
+
+
+

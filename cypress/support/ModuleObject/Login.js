@@ -1,4 +1,4 @@
-class UserLogin
+class Login
 {
     getUserID()
     {
@@ -10,8 +10,8 @@ class UserLogin
     }
     getSignin()
     {
-        return cy.get('.w-full.btn.btn-blue')
+        return cy.get('.pt-8 > .justify-center')
     }
 
 }
-export default UserLogin; 
+export default Login; 

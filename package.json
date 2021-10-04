@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.175",
+    "chai": "^4.3.4",
     "cypress": "^8.3.0"
   }
 }
