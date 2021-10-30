@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-10-25T18:22:00.639Z",
+    "end": "2021-10-25T18:24:00.615Z",
+    "duration": 119976,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e6a42dd6-b52d-435d-b1e5-8e2936489791",
+      "title": "",
+      "fullFile": "cypress/integration/BDD/crm.feature",
+      "file": "cypress/integration/BDD/crm.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61f7a147-6c3b-4b98-8c5c-7d88befa2dac",
+          "title": "Admin All Feature Validation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User Addition",
+              "fullTitle": "Admin All Feature Validation User Addition",
+              "timedOut": null,
+              "duration": 37604,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "CypressError: Timed out retrying after 10000ms: `cy.select()` failed because it could not find a single `<option>` with value or text matching: `Test Institutes`\n\nhttps://on.cypress.io/select",
+                "estack": "CypressError: Timed out retrying after 10000ms: `cy.select()` failed because it could not find a single `<option>` with value or text matching: `Test Institutes`\n\nhttps://on.cypress.io/select\n    at getOptions (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:139191:21)\n    at tryCatcher (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:13222:23)\n    at Function.Promise.attempt.Promise.try (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:10496:29)\n    at retryOptions (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:139229:27)\n    at tryCatcher (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:13222:23)\n    at Function.Promise.attempt.Promise.try (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:10496:29)\n    at tryFn (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:153290:21)\n    at whenStable (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:153328:12)\n    at https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:152820:16\n    at tryCatcher (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:13222:23)\n    at Promise._settlePromiseFromHandler (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:11157:31)\n    at Promise._settlePromise (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:11214:18)\n    at Promise._settlePromise0 (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:11259:10)\n    at Promise._settlePromises (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:11339:18)\n    at Promise._fulfill (https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:11283:18)\n    at https://uat.crm2.edutra.io/__cypress/runner/cypress_runner.js:12897:46\nFrom Your Spec Code:\n    at Context.eval (https://uat.crm2.edutra.io/__cypress/tests?p=cypress\\integration\\BDD\\crm.feature:82:27)\n    at Context.resolveAndRunStepDefinition (https://uat.crm2.edutra.io/__cypress/tests?p=cypress\\integration\\BDD\\crm.feature:22652:29)\n    at Context.eval (https://uat.crm2.edutra.io/__cypress/tests?p=cypress\\integration\\BDD\\crm.feature:21973:35)",
+                "diff": null
+              },
+              "uuid": "4109a44e-309f-4ea1-8fc0-3984b1904385",
+              "parentUUID": "61f7a147-6c3b-4b98-8c5c-7d88befa2dac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4109a44e-309f-4ea1-8fc0-3984b1904385"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 37604,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

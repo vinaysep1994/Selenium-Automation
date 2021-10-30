@@ -4,9 +4,10 @@
   "reporter": "mochawesome",
   
   "env": {
-    "url": "" 
+    "url": "https://staging.crm2.edutra.io/" 
   },
-  
+  "testFiles": "**/*.feature",
+
   "retries": {
 
   "runMode": 1

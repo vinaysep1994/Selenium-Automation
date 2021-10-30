@@ -2,12 +2,16 @@ class Settings
 {  
 getSetting()
 {
-    return cy.get(':nth-child(5) > :nth-child(2) > a')
+    return cy.get(':nth-child(6) > li > a')
+}
+getWait()
+{
+    return cy.wait(12000)
 }
 //source locator
-getClickSource()
+getClickADD()
 {
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
+    return cy.get('.bredcrumb-div div:nth-child(2) a:nth-child(1)')
 }
 getTableList()
 {
@@ -15,27 +19,23 @@ getTableList()
 }
 getSourcedelete()
 {
-    return cy.contains('tr','test source').find('td:nth-child(3) a:nth-child(2)')
+    return cy.contains('tr','Test Source').find('td:nth-child(3) a:nth-child(2)')
 }
 getSourceName()
 {
     return cy.get('#myInput')
 }
-getAddSource()
-{
-    return cy.get('.btn-inline')
-}
-getSourceAssertion()
+getAssertion()
 {
     return cy.get('.ml-3 p')
 }
 getSourceEdit1()
 {
-    return cy.contains('tr','test source').find('td:nth-child(3) a:nth-child(1)')
+    return cy.contains('tr','Test Source').find('td:nth-child(3) a:nth-child(1)')
 }
 getSourceEdit2()
 {
-   return  cy.contains('tr','Test source').find('td:nth-child(3) a:nth-child(1)')
+   return  cy.contains('tr','test source').find('td:nth-child(3) a:nth-child(1)')
 }
 getsourceNameEdit()
 {
@@ -43,9 +43,13 @@ getsourceNameEdit()
 }
 
 //Sub source locator
-getClickSubsource()
+getClickReason()
 {
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
+    return cy.get('')
+}
+getClickADDReason()
+{
+    return cy.get('.bredcrumb-div > .gap-1 > :nth-child(1) > .flex')
 }
 getSubsourceName()
 {
@@ -56,15 +60,15 @@ getSelectSources()
     return cy.get('#parent')
 }
 //sub source locator
-getAddSubsource()
-{
-    return cy.get('.btn-inline')
-}
 getsubSourcedelete()
 {
-    return cy.contains('tr','test sub source').find('td:nth-child(3) a:nth-child(2)')
+    return cy.contains('tr','Test Sub Source').find('td:nth-child(3) a:nth-child(2)')
 }
-getSubSourceEdit()
+getSubSourceEdit1()
+{
+    return cy.contains('tr','Test Sub Source').find('td:nth-child(3) a:nth-child(1)')
+}
+getSubSourceEdit2()
 {
     return cy.contains('tr','test sub source').find('td:nth-child(3) a:nth-child(1)')
 }
@@ -72,26 +76,30 @@ getSubsourceNameEdit()
 {
     return cy.get('#name')
 }
-//Stage locator
+//Stage locatorgetStage
 getClickStages()
 {
-    return cy.get('[href="https://staging.crm2.edutra.io/admin/lead-stages"] > .truncate')
+    return cy.get('.my-4 a:nth-child(3) span')
 }
-getStages()
-{
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
-}
-getStagesEditName()
+getStagesName()
 {
     return cy.get('#name')
 }
+getStageDelete()
+{
+    return cy.contains('tr','Test').find('td:nth-child(5) a:nth-child(2)')
+}
+getDeletepermission()
+{
+    return cy.get('#delete_yes')
+}
 getEditStage1()
 {
-    return cy.contains('tr','Test Stage').find('td:nth-child(5) a:nth-child(1)')
+    return cy.contains('tr','Test').find('td:nth-child(5) a:nth-child(1)')
 }
 getEditStage2()
 {
-    return cy.contains('tbody tr','Test').find('td:nth-child(5) a:nth-child(1)')
+    return cy.contains('tr','test stage').find('td:nth-child(5) a:nth-child(1)')
 }
 getAdd()
 {
@@ -100,7 +108,7 @@ getAdd()
 //Reason locator
 getClickReasons()
 {
-    return cy.get('[href="https://staging.crm2.edutra.io/admin/lead-reasons"] > .truncate')
+    return cy.get('.my-4 a:nth-child(4) span')
 }
 getReasons()
 {
@@ -114,18 +122,23 @@ getReasonsName()
 {
     return cy.get('#name')
 }
-getAddReasons()
+getReasonDelete()
 {
-    return cy.get('.btn-inline')
+    return cy.contains('tr','Test Reason').find('td:nth-child(4) a:nth-child(2)')
 }
-getReasonsuccess()
+getEditReason1()
 {
-    return cy.get('.ml-3 > .text-sm')
+    return cy.contains('tr','Test Reason').find('td:nth-child(4) a:nth-child(1)')
 }
+getEditReason2()
+{
+    return cy.contains('tr','test reason').find('td:nth-child(4) a:nth-child(1)')
+}
+
 //sub reason locator
 getSubreasons()
 {
-    return cy.get('.mb-6 > .gap-1 > :nth-child(2) > .flex')
+    return cy.get('.bredcrumb-div > .gap-1 > :nth-child(2) > .flex')
 }
 getSubReasonName()
 {
@@ -135,22 +148,31 @@ getSelectReasons()
 {
     return cy.get('#parent')
 }
-getAddReason()
+getUpdate()
 {
     return cy.get('.btn-inline')
 }
-getSubReasonsuccess()
+getSelectReason()
 {
-    return cy.get('.ml-3 > .text-sm')
+    return cy.get('#parent')
 }
+getSubReasonDelete()
+{
+    return cy.contains('tr','New Sub Reason').find('td:nth-child(4) a:nth-child(2)')
+}
+getEditSubReason1()
+{
+    return cy.contains('tr','New Sub Reason').find('td:nth-child(4) a:nth-child(1)')
+}
+getEditSubReason2()
+{
+    return cy.contains('tr','new sub reason').find('td:nth-child(4) a:nth-child(1)')
+}
+
 //Institutes locator
 getClickInstitutes()
 {
-    return cy.get('[href="https://staging.crm2.edutra.io/admin/institutes"]')
-}
-getInstitutes()
-{
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
+    return cy.get('.my-4 a:nth-child(5) span')
 }
 getInstitutesName()
 {
@@ -164,44 +186,62 @@ getSmssendername()
 {
     return cy.get('#sms_senderid')
 }
-getAddinstitutes()
+getInstituteDelete()
 {
-    return cy.get('.btn-inline')
+    return cy.contains('tr','Test Institute').find('td:nth-child(5) a:nth-child(2)')
+}
+getAleartAssertion()
+{
+    return cy.get('.alert-danger ul li')
+}
+getEditInstitute1()
+{
+    return cy.contains('tr','Test Institute').find('td:nth-child(5) a:nth-child(1)')
+}
+getEditInstitute2()
+{
+    return cy.contains('tr','test institute').find('td:nth-child(5) a:nth-child(1)')
 }
 //course locator
 getClickCourses()
 {
-    return cy.get('[href="https://staging.crm2.edutra.io/admin/courses"] > .truncate')
+    return cy.get('.my-4 a:nth-child(6) span')
 }
-getCourses()
-{
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
-}
-getCoureseName()
+getCourseName()
 {
     return cy.get('#name')
 }
-getSelectinstitutesforcourse()
+getSelectinstitute()
 {
     return cy.get('#institute_id')
+    cy.get('#institutes')
 }
-getAddcourse()
+getCourseDelete()
 {
-    return cy.get('.btn-inline')
+    return cy.contains('tr','Test Course').find('td:nth-child(3) a:nth-child(2)')
+}
+getEditCourse1()
+{
+    return cy.contains('tr','Test Course').find('td:nth-child(3) a:nth-child(1)')
+}
+getEditCourse2()
+{
+    return cy.contains('tr','test course').find('td:nth-child(3) a:nth-child(1)')
 }
 //specializations locator
 getClickspecializations()
 {
-    return cy.get('[href="https://staging.crm2.edutra.io/admin/specializations"] > .truncate')
-}
-getSpecializations()
-{
-    return cy.get('.mb-6 > .gap-1 > :nth-child(1) > .flex')
+    return cy.get('.my-4 a:nth-child(7) span')
 }
 getSelectinstitutes()
 {
     return cy.get('#institutes')
 }
+getSelectinstitutesforEdit()
+{
+    return cy.get('#institute')
+}
+ 
 getSelectCourses()
 {
     return cy.get('#courses')
@@ -210,9 +250,17 @@ getSpecializationName()
 {
     return cy.get('#name')
 }
-getAddSpecializations()
+getSpecializationDelete()
 {
-    return cy.get('.btn-inline')
-
+    return cy.contains('tr','Test Specialization').find('td:nth-child(4) a:nth-child(2)')
 }
+getEditSpecialization1()
+{
+    return cy.contains('tr','Test Specialization').find('td:nth-child(4) a:nth-child(1)')
+}
+getEditSpecialization2()
+{
+    return cy.contains('tr','test specialization').find('td:nth-child(4) a:nth-child(1)')
+}
+
 } export default Settings; 

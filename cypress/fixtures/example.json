@@ -67,13 +67,14 @@
   "specializationsname":"Test specialization",
 
   "User ":"User Details..............................................",
-  "empid":"Test001",
+  "empid":"Test000",
   "username":"testkumar",
-  "useremail":"testkuamr@gmail.com",
-  "usermobile":"8383088888",
+  "useremail":"saket@gmail.com",
+  "usermobile":"83088888",
+  "Institute":"Test Institute",
+  "Role":"Counsellor",
+  "reportinguser":"Admin (SODE0001)",
   "userpassword":"passwords",
-  "userole":"Counsellor",
-  "reportinguser":"1",
 
   "body": "Fixtures are a great way to mock data for responses to routes"
 }

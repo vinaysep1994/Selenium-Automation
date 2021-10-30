@@ -12,7 +12,7 @@ class Lead
   //match lead stage
   getLeadStage()
   {
-    return cy.get('.space-y-3:nth-child(3) span')
+    return cy.get('.inline-flex-item')
   }
   getNewLeads()
   {
@@ -127,7 +127,7 @@ class Lead
   //LeadMenu
   getLeadmenu()
   {
-    return cy.get('#headlessui-menu-button-31 > .icon-svg-icon')
+    return cy.get('#headlessui-menu-button-1 > .icon-svg-icon')
   }
   // Lead edit
   getLeadedit()
@@ -168,6 +168,9 @@ class Lead
    {
      return cy.get('.mt-5 > .text-white')
    }
-   
+   getLeadStageAssertion()
+   {
+      return cy.get('.inline-flex-item')
+   }
 }
 export default Lead; 

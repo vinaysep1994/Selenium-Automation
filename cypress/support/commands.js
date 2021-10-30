@@ -13,20 +13,20 @@
 // Cypress.Commands.add('login', (email, password) => { ... }) 
 
 Cypress.Commands.add('AdminLogin',(email, password) => {
-
-    cy.visit('https://staging.crm2.edutra.io/')
-    cy.get('#email').type('support@distanceeducationschool.com')
-    cy.get('#password').type('DES@123')
+    cy.visit('https://uat.crm2.edutra.io/')
+    cy.get('#email').type('mis@blackboardindia.com')
+    cy.get('#password').type('DES@1212')
     cy.get('.pt-8 > .justify-center').click()
   })
-
   Cypress.Commands.add('AMLogin', (email, password) => {
 
-    cy.visit('https://staging.crm2.edutra.io/')
+    cy.visit('https://uat.crm2.edutra.io/')
     cy.get('#email').type('akashdutta@blackboardindia.com')
     cy.get('#password').type('BSEE1179@123')
     cy.get('.pt-8 > .justify-center').click()
   })
+
+
 //
 //
 // -- This is a child command --

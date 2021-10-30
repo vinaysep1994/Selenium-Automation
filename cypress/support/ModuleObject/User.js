@@ -1,8 +1,12 @@
 class User
 {
-    getUser()
+    getClickUser()
     {
-        return cy.get('.p-0 > .w-5')
+        return cy.get('.truncate').contains('Users')
+    }
+    getClickADDUser()
+    {
+        return cy.get('.bredcrumb-div div:nth-child(2) a:nth-child(2) svg:nth-child(1)')
     }
     getUserEmpid()
     {
@@ -22,7 +26,7 @@ class User
     }
     getUserPassword()
     {
-        return cy.get('.mt-1 > #password')
+        return cy.get(':nth-child(9) > div > #password')
     }
     getUserRole()
     {
@@ -39,6 +43,18 @@ class User
     getAddUser()
     {
         return cy.get('.pt-5 > .flex > .ml-3')
+    }
+    getSearchUser()
+    {
+        return cy.get('#input_search')
+    }
+    getClickSearch()
+    {
+        return cy.get('.border-blue-500')
+    }
+    getDeleteUser()
+    {
+        return cy.get('tbody tr').contains('gauravsvude@gmail.com').find('td:nth-child(10) a:nth-child(2)')
     }
 }
 export default User;
